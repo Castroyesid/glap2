@@ -9767,6 +9767,21 @@
 
         // Initialize
         updateMap();
-    </script>
+
+                
+        // Function to calculate surface phonemes
+        function calculateSurfacePhonemes(language) {
+            return language.sourceInventory.vowels.length +
+                language.sourceInventory.consonants.length +
+                language.sourceInventory.marginalVowels.length +
+                language.sourceInventory.marginalConsonants.length;
+        }
+        
+        // Auto-calculate surface phonemes for all languages
+        languageData.forEach(lang => {
+            lang.surfacePhonemes = calculateSurfacePhonemes(lang);
+        });
+        
+    </script> 
 </body>
 </html>

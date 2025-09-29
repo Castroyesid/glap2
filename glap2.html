@@ -2203,16 +2203,16 @@
                 },
                 elementaryInventory: ["a", "n", "j", "w", "l", "ʔ"],
                 features: { 
-                    list: ["±front", "±oral", "±occlusive", "±consonantal"], 
-                    manner: ["±oral", "±occlusive", "±consonantal"], 
+                    list: ["±front", "±oral", "±consonantal"], 
+                    manner: ["±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": {front: "±", oral: "±", occlusive: "-", consonantal: "-"},
-                        "n": {front: "±", oral: "-", occlusive: "-", consonantal: "±"},
-                        "j": {front: "+", oral: "±", occlusive: "-", consonantal: "±"},
-                        "w": {front: "±", oral: "±", occlusive: "-", consonantal: "±"},
-                        "l": {front: "+", oral: "±", occlusive: "-", consonantal: "+"},
-                        "ʔ": {front: "±", oral: "±", occlusive: "+", consonantal: "+"}
+                        "a": {front: "±", oral: "±", consonantal: "-"},
+                        "n": {front: "±", oral: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", consonantal: "±"},
+                        "w": {front: "±", oral: "±", consonantal: "±"},
+                        "l": {front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 mappings: {
@@ -2244,21 +2244,53 @@
                 name: "Kadiwéu",
                 lat: -20.069296044063602,
                 lng: -56.90149729442925,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Guaicuruan",
                 region: "South America",
-                notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                notes: "Sandalo notes that there are register-based phonological differences, and \"noble and non-noble Kadiwéu differ in that Noble Kadiwéu lacks long semivowels.\" (SaPhon)",
+                source: "Sándalo, Filomena (1997). *A Grammar of Kadiwéu with Special Reference to the Polysynthesis Parameter*. Massachusetts Institute of Technology.<br><br>Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Kadiweu.html",
+                sourceInventory: { 
+                    vowels: ["i", "iː", "e", "eː", "o", "oː", "a", "aː"], 
+                    consonants: ["m", "mː", "n", "nː", "p", "t", "tʃ", "k", "q", "b", "bː", "d", "dː", "dʒ", "ɡ", "ɡː", "ɢ", "wl", "lː", "j"], 
+                    marginalConsonants: ["wː", "jː"], 
+                    marginalVowels: [], 
+                    suprasegmentals: ["tone", "length"] 
+                },
+                elementaryInventory: ["a", "i", "n", "j", "w", "l", "q"],
+                features: { 
+                    list: ["±high", "±front", "±oral", "±consonantal"], 
+                    manner: ["±high", "±oral", "±consonantal"], 
+                    place: ["±front"], 
+                    matrix: {
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "i": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "l": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "q": {high: "±", front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wn",
+                    "p": "qw", 
+                    "b": "nqw", 
+                    "w": "w",
+                    "n": "ln",
+                    "t": "ql", 
+                    "d": "nql", 
+                    "l": "l", 
+                    "tʃ": "qlj", 
+                    "dʒ": "nlj", 
+                    "j": "j",
+                    "k": "qj",
+                    "q": "q", 
+                    "ɡ": "nqj", 
+                    "ɢ": "nq",
+                    "i": "i", 
+                    "e": "aj", 
+                    "o": "aw", 
+                    "a": "a"
+                }
             },
             {
                 name: "Mamindé",

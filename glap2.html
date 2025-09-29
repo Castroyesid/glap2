@@ -2374,21 +2374,65 @@
                 name: "Guató",
                 lat: -17.152140811822242,
                 lng: -57.98223286367668,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
-                family: "Macro-Gê",
+                family: "Guató",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Palácio, Adair Pimentel (1984). *Guató: a língua dos índios canoeiros do rio Paraguai* (PhD thesis) (in Portuguese). Campinas: Universidade Estadual de Campinas.<br><br>Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Guato.html",
+                sourceInventory: { 
+                    vowels: ["i", "ɨ", "u", "e", "o", "ɛ", "a", "ɔ"], 
+                    consonants: ["m", "n", "b", "d", "dʒ", "ɡ", "ɡʷ", "p", "t", "tʃ", "k", "kʷ", "f", "ɾ", "j", "h", "w"], 
+                    marginalConsonants: [], 
+                    marginalVowels: ["ĩ", "ɨ̃", "ũ", "ẽ", "ã"], 
+                    suprasegmentals: ["tone"] 
+                },
+                elementaryInventory: ["a", "ə", "ɨ", "n", "j", "w", "k", "h"],
+                features: { 
+                    list: ["±high", "±low", "±front", "±oral", "±consonantal"], 
+                    manner: ["±high", "±low", "±oral", "±consonantal"], 
+                    place: ["±front"], 
+                    matrix: {
+                        "a": {high: "-", low: "±", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", low: "±", front: "±", oral: "±", consonantal: "-"},
+                        "ɨ": {high: "±", low: "-", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", low: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", low: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", low: "±", front: "±", oral: "±", consonantal: "±"},
+                        "k": {high: "±", low: "±", front: "+", oral: "±", consonantal: "+"},
+                        "h": {high: "±", low: "±", front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wkn",
+                    "b": "nwk", 
+                    "p": "wk", 
+                    "f": "wh",
+                    "n": "jkn",
+                    "d": "njk", 
+                    "dʒ": "nkj", 
+                    "t": "jk", 
+                    "tʃ": "kj", 
+                    "ɾ": "hj", 
+                    "j": "j",
+                    "ɡ": "nk",
+                    "ɡʷ": "nkw", 
+                    "k": "k", 
+                    "kʷ": "kw", 
+                    "h": "h", 
+                    "w": "w",
+                    "i": "ɨj", 
+                    "ɨ": "ɨ", 
+                    "u": "ɨw", 
+                    "ĩ": "ɨjn", 
+                    "ɨ̃": "ɨn", 
+                    "ũ": "ɨwn", 
+                    "e": "əj", 
+                    "o": "əw", 
+                    "ẽ": "ən", 
+                    "ɛ": "aj", 
+                    "a": "a", 
+                    "ɔ": "aw", 
+                    "ã": "an"
+                }
             },
             {
                 name: "Lule",
@@ -4451,21 +4495,60 @@
                 name: "Xavante",
                 lat: -15.33,
                 lng: -52.80,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
-                family: "Macro-Gê",
+                family: "Jê",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "McLeod, Ruth. (1974) *Fonemas Xavante.* Série Lingüística № 3: 131-152.<br><br>Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Xavante.html",
+                sourceInventory: { 
+                    vowels: ["i", "ĩ", "ɨ", "u", "e", "ə", "o", "ɛ", "ɛ̃", "a", "ã", "ɔ", "ɔ̃"], 
+                    consonants: ["p", "t", "ʔ", "b", "d", "w", "ɾ", "j", "s"], 
+                    marginalConsonants: ["ɣ", "h", "z"], 
+                    marginalVowels: [], 
+                    suprasegmentals: ["length"] 
+                },
+                elementaryInventory: ["a", "ə", "ɨ", "n", "j", "w", "t", "h"],
+                features: { 
+                    list: ["±high", "±low", "±front", "±oral", "±consonantal"], 
+                    manner: ["±high", "±low", "±oral", "±consonantal"], 
+                    place: ["±front"], 
+                    matrix: {
+                        "a": {high: "-", low: "±", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", low: "±", front: "±", oral: "±", consonantal: "-"},
+                        "ɨ": {high: "±", low: "-", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", low: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", low: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", low: "±", front: "±", oral: "±", consonantal: "±"},
+                        "t": {high: "±", low: "±", front: "+", oral: "±", consonantal: "+"},
+                        "h": {high: "±", low: "±", front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "p": "wt",
+                    "b": "nwt", 
+                    "w": "w",
+                    "t": "jtn",
+                    "d": "jt", 
+                    "ɾ": "jh", 
+                    "s": "th", 
+                    "z": "hj",
+                    "ʔ": "t",
+                    "ɣ": "nt", 
+                    "j": "j", 
+                    "h": "h",
+                    "i": "ɨj", 
+                    "ĩ": "ɨjn", 
+                    "ɨ": "ɨ", 
+                    "u": "ɨw", 
+                    "e": "əj", 
+                    "ə": "ə", 
+                    "o": "əw", 
+                    "ɛ": "aj", 
+                    "ɛ̃": "ajn", 
+                    "a": "a", 
+                    "ã": "an", 
+                    "ɔ": "aw", 
+                    "ɔ̃": "awn"
+                }
             },
             {
                 name: "Irantxé",
@@ -9520,7 +9603,7 @@
             
             // Dynamic radius based on zoom level - increased size
             const currentZoom = map.getZoom();
-            const radius = Math.max(5, Math.min(30, (currentZoom - 1) * 2.5));
+            const radius = Math.max(5, Math.min(30, (currentZoom - 1) * 5));
             
             const marker = L.circleMarker([language.lat, language.lng], {
                 radius: radius,
@@ -9556,7 +9639,7 @@
 
         function updateMarkerSizes() {
             const currentZoom = map.getZoom();
-            const radius = Math.max(5, Math.min(30, (currentZoom - 1) * 2.5));
+            const radius = Math.max(5, Math.min(30, (currentZoom - 1) * 5));
             
             markers.forEach(marker => {
                 marker.setRadius(radius);

@@ -281,6 +281,7 @@
                 sourceInventory: {
                     vowels: ["i", "o", "a"],
                     consonants: ["p", "t", "ʔ", "b", "g", "h"],
+                    marginalVowels: [],
                     marginalConsonants: ["k", "s"],
                     suprasegmentals: ["tone"]
                 },
@@ -328,6 +329,7 @@
                 sourceInventory: {
                     vowels: ["i", "e", "a", "o", "u"],
                     consonants: ["p", "t", "k", "b", "d", "g"],
+                    marginalVowels: [],
                     marginalConsonants: ["m", "n", "ŋ", "iː", "eː", "aː", "oː", "uː"],
                     suprasegmentals: ["length"]
                 },
@@ -379,6 +381,8 @@
                 sourceInventory: {
                     vowels: ["i", "e", "a", "o", "u", "iː", "eː", "aː", "oː", "uː", "iu", "ou", "oi", "eu", "ei", "au", "ai", "ao", "ae", "oːu", "eːi", "aːu", "aːi", "aːo", "aːe"],
                     consonants: ["m", "n", "l", "p", "t", "ʔ", "h", "w"],
+                    marginalVowels: [],
+                    marginalConsonants: [],
                     suprasegmentals: ["length"]
                 },
                 elementaryInventory: ["a", "ə", "w", "j", "ʔ"],
@@ -507,6 +511,7 @@
                 sourceInventory: {
                     vowels: ["i", "e", "a", "u", "o"],
                     consonants: ["m", "n", "ɲ", "b", "d̪", "ɡ", "p", "t̪", "tʃ", "k", "f", "s", "l", "ɾ", "r"],
+                    marginalVowels: [],
                     marginalConsonants: ["θ", "ʃ", "ʎ"],
                     suprasegmentals: ["lexical stress"]
                 },
@@ -649,6 +654,7 @@
                     vowels: ["i", "u", "e", "o", "ɛ", "ɐ", "ɔ", "a", "ĩ", "ẽ", "ɐ̃", "ũ", "õ"],
                     consonants: ["m", "n", "ɲ", "b", "d", "ɡʷ", "g", "p", "t", "kʷ", "k", "v", "z", "ʒ", "f", "s", "ʃ", "j", "w", "ɾ", "ʁ", "l", "ʎ"],
                     marginalVowels: ["ɨ", "ɐ̃j̃", "ɐ̃w̃", "ẽj̃", "õj̃", "õw̃", "ũj̃"],
+                    marginalConsonants: [],
                     suprasegmentals: ["lexical stress"]
                 },
                 elementaryInventory: ["ɨ", "ɐ", "a", "n", "j", "w", "l", "r", "g", "h"],
@@ -727,6 +733,7 @@
                 sourceInventory: {
                     vowels: ["i", "e", "æ", "u", "o", "ɒ"],
                     consonants: ["m", "p", "b", "f", "v", "w", "n", "t", "d", "s", "z", "l", "tʃ", "dʒ", "ʃ", "r", "k", "g", "j", "h"],
+                    marginalVowels: [],
                     marginalConsonants: ["θ", "ð", "ʒ", "ŋ", "x", "ʔ"],
                     suprasegmentals: ["lexical stress"]
                 },
@@ -2026,13 +2033,13 @@
                     manner: ["±high", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "±front", "±oral", "-consonantal"],
-                        "ə": ["±high", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "±front", "±oral", "±consonantal"],
-                        "k": ["±high", "+front", "±oral", "+consonantal"],
-                        "h": ["±high", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "k": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "h": {high: "±", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -2073,8 +2080,8 @@
             },
             {
                 name: "Enxet",
-                lat: -22.541777374304377,
-                lng: -58.751357743022716,
+                lat: -22.927123447080383, 
+                lng: -58.95989608529028,
                 elementarySegments: 7,
                 vowels: 1,
                 consonants: 6,
@@ -2096,13 +2103,13 @@
                     manner: ["±oral", "±occlusive", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["±front", "±oral", "-occlusive", "-consonantal"],
-                        "n": ["±front", "-oral", "-occlusive", "±consonantal"],
-                        "j": ["+front", "±oral", "-occlusive", "±consonantal"],
-                        "w": ["±front", "±oral", "-occlusive", "±consonantal"],
-                        "l": ["+front", "±oral", "-occlusive", "+consonantal"],
-                        "h": ["±front", "±oral", "-occlusive", "+consonantal"],
-                        "q": ["±front", "±oral", "+occlusive", "+consonantal"]
+                        "a": {front: "±", oral: "±", occlusive: "-", consonantal: "-"},
+                        "n": {front: "±", oral: "-", occlusive: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", occlusive: "-", consonantal: "±"},
+                        "w": {front: "±", oral: "±", occlusive: "-", consonantal: "±"},
+                        "l": {front: "+", oral: "±", occlusive: "-", consonantal: "+"},
+                        "h": {front: "±", oral: "±", occlusive: "-", consonantal: "+"},
+                        "q": {front: "±", oral: "±", occlusive: "+", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -2128,6 +2135,108 @@
                     "h": "h",
                     "e": "aj", 
                     "o": "aw", 
+                    "a": "a"
+                }
+            },
+            {
+                name: "Sanapaná",
+                lat: -22.383861793276164,
+                lng: -58.58114689292625,
+                family: "Mascoian",
+                region: "South America",
+                notes: "",
+                source: "van Gysel, Jens (2017). *Temporal Predicative Particles in Sanapaná and the Enlhet-Enenlhet Language Family (Paraguay): A Descriptive and Comparative Study*. Leiden University.",
+                sourceInventory: { 
+                    vowels: ["e", "o", "a"], 
+                    consonants: ["p", "t", "k", "ʔ", "m", "n", "ŋ", "s", "h", "ɬ", "w", "l", "j"], 
+                    marginalConsonants: [], 
+                    marginalVowels: [], 
+                    suprasegmentals: [] 
+                },
+                elementaryInventory: ["a", "n", "j", "w", "l", "ʔ"],
+                features: { 
+                    list: ["±front", "±oral", "±consonantal"], 
+                    manner: ["±oral", "±consonantal"], 
+                    place: ["±front"], 
+                    matrix: {
+                        "a": {front: "±", oral: "±", consonantal: "-"},
+                        "n": {front: "±", oral: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", consonantal: "±"},
+                        "w": {front: "±", oral: "±", consonantal: "±"},
+                        "l": {front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "p": "wʔ",
+                    "m": "wn", 
+                    "w": "w",
+                    "t": "lʔ",
+                    "n": "ln", 
+                    "s": "lnʔ", 
+                    "ɬ": "l", 
+                    "l": "nl",
+                    "k": "jʔ",
+                    "ʔ": "ʔ", 
+                    "ŋ": "jn", 
+                    "h": "nʔ", 
+                    "j": "j",
+                    "e": "aj", 
+                    "o": "aw", 
+                    "a": "a"
+                }
+            },
+            {
+                name: "Enlhet",
+                lat: -21.617255773782173,
+                lng: -57.985912175139426,
+                family: "Mascoian",
+                region: "South America",
+                notes: "",
+                source: "Unruh, Ernesto; Kalisch, Hannes (1999). *Escribir en Idioma Enlhet para Hacer Crecer lo Propio*. Fe de Errata Suplemento Antropológico.",
+                sourceInventory: { 
+                    vowels: ["ɛ", "ɔ", "a"], 
+                    consonants: ["m", "n", "ŋ", "mˀ", "nˀ", "ŋˀ", "p", "t", "k", "ʔ", "ɬ", "x", "h", "w", "l", "j", "wˀ", "s", "jˀ"], 
+                    marginalConsonants: [], 
+                    marginalVowels: [], 
+                    suprasegmentals: [] 
+                },
+                elementaryInventory: ["a", "n", "j", "w", "l", "ʔ"],
+                features: { 
+                    list: ["±front", "±oral", "±occlusive", "±consonantal"], 
+                    manner: ["±oral", "±occlusive", "±consonantal"], 
+                    place: ["±front"], 
+                    matrix: {
+                        "a": {front: "±", oral: "±", occlusive: "-", consonantal: "-"},
+                        "n": {front: "±", oral: "-", occlusive: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", occlusive: "-", consonantal: "±"},
+                        "w": {front: "±", oral: "±", occlusive: "-", consonantal: "±"},
+                        "l": {front: "+", oral: "±", occlusive: "-", consonantal: "+"},
+                        "ʔ": {front: "±", oral: "±", occlusive: "+", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wn",
+                    "mˀ": "wnʔ", 
+                    "p": "ʔw", 
+                    "w": "w", 
+                    "wˀ": "wʔ",
+                    "n": "ln",
+                    "nˀ": "lnʔ", 
+                    "s": "ʔl", 
+                    "ɬ": "ʔlʔ", 
+                    "l": "l", 
+                    "t": "lʔ",
+                    "ŋ": "jn",
+                    "ŋˀ": "jnʔ", 
+                    "k": "ʔj", 
+                    "ʔ": "ʔʔ", 
+                    "x": "ʔjʔ", 
+                    "h": "ʔ", 
+                    "j": "j", 
+                    "jˀ": "jʔ",
+                    "ɛ": "aj", 
+                    "ɔ": "aw", 
                     "a": "a"
                 }
             },
@@ -2274,13 +2383,13 @@
                     manner: ["±high", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "±front", "±oral", "-consonantal"],
-                        "ə": ["±high", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "±front", "±oral", "±consonantal"],
-                        "l": ["±high", "+front", "±oral", "+consonantal"],
-                        "ʔ": ["±high", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "l": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -3005,13 +3114,13 @@
                     manner: ["±high", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "±front", "±oral", "-consonantal"],
-                        "ə": ["±high", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "±front", "±oral", "±consonantal"],
-                        "t": ["±high", "+front", "±oral", "+consonantal"],
-                        "ʔ": ["±high", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "t": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -3072,14 +3181,14 @@
                     manner: ["±high", "±occlusive", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "-occlusive", "±front", "±oral", "-consonantal"],
-                        "ə": ["±high", "-occlusive", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "-occlusive", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "-occlusive", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "-occlusive", "±front", "±oral", "±consonantal"],
-                        "l": ["±high", "-occlusive", "+front", "±oral", "+consonantal"],
-                        "h": ["±high", "-occlusive", "±front", "±oral", "+consonantal"],
-                        "ʔ": ["±high", "+occlusive", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", occlusive: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", occlusive: "-", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", occlusive: "-", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "±"},
+                        "l": {high: "±", occlusive: "-", front: "+", oral: "±", consonantal: "+"},
+                        "h": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", occlusive: "+", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 5,
@@ -3140,13 +3249,13 @@
                     manner: ["±consonantal", "±oral", "high"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "", "-oral", "-consonantal"],
-                        "ə": ["±high", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "±front", "±oral", "±consonantal"],
-                        "l": ["±high", "+front", "±oral", "+consonantal"],
-                        "ʔ": ["±high", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", front: "±", oral: "-", consonantal: "-"},
+                        "ə": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "l": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -4411,15 +4520,15 @@
                     manner: ["±high", "±occlusive", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-high", "-occlusive", "±front", "±oral", "-consonantal"],
-                        "ə": ["±high", "-occlusive", "±front", "±oral", "-consonantal"],
-                        "n": ["±high", "-occlusive", "±front", "-oral", "±consonantal"],
-                        "j": ["±high", "-occlusive", "+front", "±oral", "±consonantal"],
-                        "w": ["±high", "-occlusive", "±front", "±oral", "±consonantal"],
-                        "r": ["±high", "-occlusive", "+front", "±oral", "+consonantal"],
-                        "h": ["±high", "-occlusive", "±front", "±oral", "+consonantal"],
-                        "k": ["±high", "+occlusive", "+front", "±oral", "+consonantal"],
-                        "ʔ": ["±high", "+occlusive", "±front", "±oral", "+consonantal"]
+                        "a": {high: "-", occlusive: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ə": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", occlusive: "-", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", occlusive: "-", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "±"},
+                        "r": {high: "±", occlusive: "-", front: "+", oral: "±", consonantal: "+"},
+                        "h": {high: "±", occlusive: "-", front: "±", oral: "±", consonantal: "+"},
+                        "k": {high: "±", occlusive: "+", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", occlusive: "+", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 5,
@@ -4484,14 +4593,14 @@
                     manner: ["±occlusive", "±oral", "±consonantal"], 
                     place: ["±front"], 
                     matrix: {
-                        "a": ["-occlusive", "±front", "±oral", "-consonantal"],
-                        "n": ["-occlusive", "±front", "-oral", "±consonantal"],
-                        "j": ["-occlusive", "+front", "±oral", "±consonantal"],
-                        "w": ["-occlusive", "±front", "±oral", "±consonantal"],
-                        "l": ["-occlusive", "+front", "±oral", "+consonantal"],
-                        "h": ["-occlusive", "±front", "±oral", "+consonantal"],
-                        "t": ["+occlusive", "+front", "±oral", "+consonantal"],
-                        "ʔ": ["+occlusive", "±front", "±oral", "+consonantal"]
+                        "a": {occlusive: "-", front: "±", oral: "±", consonantal: "-"},
+                        "n": {occlusive: "-", front: "±", oral: "-", consonantal: "±"},
+                        "j": {occlusive: "-", front: "+", oral: "±", consonantal: "±"},
+                        "w": {occlusive: "-", front: "±", oral: "±", consonantal: "±"},
+                        "l": {occlusive: "-", front: "+", oral: "±", consonantal: "+"},
+                        "h": {occlusive: "-", front: "±", oral: "±", consonantal: "+"},
+                        "t": {occlusive: "+", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {occlusive: "+", front: "±", oral: "±", consonantal: "+"}
                     }
                 },
                 totalFeatures: 4,
@@ -9764,24 +9873,51 @@
                 }
             });
         });
-
-        // Initialize
-        updateMap();
-
                 
         // Function to calculate surface phonemes
         function calculateSurfacePhonemes(language) {
-            return language.sourceInventory.vowels.length +
-                language.sourceInventory.consonants.length +
-                language.sourceInventory.marginalVowels.length +
-                language.sourceInventory.marginalConsonants.length;
+            const vowels = language.sourceInventory.vowels ? language.sourceInventory.vowels.length : 0;
+            const consonants = language.sourceInventory.consonants ? language.sourceInventory.consonants.length : 0;
+            const marginalVowels = language.sourceInventory.marginalVowels ? language.sourceInventory.marginalVowels.length : 0;
+            const marginalConsonants = language.sourceInventory.marginalConsonants ? language.sourceInventory.marginalConsonants.length : 0;
+            
+            return vowels + consonants + marginalVowels + marginalConsonants;
         }
-        
-        // Auto-calculate surface phonemes for all languages
+
+        // Function to update all counts
+        function updateAllCounts(language) {
+            language.elementarySegments = language.elementaryInventory.length;
+
+            const vowelPattern = /^[aəɨɐieæuoɒœɑʌɤɔɛɪʊʉɯøyɶɘɵ]$/;
+            language.vowels = language.elementaryInventory.filter(segment => vowelPattern.test(segment)).length;
+            language.consonants = language.elementarySegments - language.vowels;
+
+            language.totalFeatures = language.features.list.length;
+            language.mannerFeatures = language.features.manner.length;
+            language.placeFeatures = language.features.place.length;
+            language.surfacePhonemes = calculateSurfacePhonemes(language);
+        }
+
+        languageData.forEach((lang, index) => {
+            if (!lang.sourceInventory) {
+                console.log(`Language ${index} (${lang.name}) missing sourceInventory`);
+            } else {
+                if (!lang.sourceInventory.vowels) console.log(`${lang.name} missing vowels`);
+                if (!lang.sourceInventory.consonants) console.log(`${lang.name} missing consonants`);
+                if (!lang.sourceInventory.marginalVowels) console.log(`${lang.name} missing marginalVowels`);
+                if (!lang.sourceInventory.marginalConsonants) console.log(`${lang.name} missing marginalConsonants`);
+            }
+        });
+
+
+        // Auto-calculate all counts for all languages
         languageData.forEach(lang => {
-            lang.surfacePhonemes = calculateSurfacePhonemes(lang);
+            updateAllCounts(lang);
         });
         
+        // Initialize
+        updateMap();
+
     </script> 
 </body>
 </html>

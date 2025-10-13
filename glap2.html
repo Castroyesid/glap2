@@ -2153,24 +2153,52 @@
                 mappings: {}
             },
             {
-                name: "Katutína",
+                name: "Katukína",
                 lat: -3.50,
                 lng: -66.45,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Katukinan",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Katukina.html",
+                sourceInventory: {
+                    vowels: ["i", "ɯ", "u", "a"],
+                    consonants: ["m", "n", "ɲ", "b", "d", "dʒ", "k", "p", "t", "tʃ", "h", "l"],
+                    marginalConsonants: [],
+                    marginalVowels: [],
+                    suprasegmentals: ["length"]
+                },
+                elementaryInventory: ["ɯ", "n", "j", "w", "l", "k"],
+                features: {
+                    list: ["±front", "±oral", "±consonantal"],
+                    manner: ["±oral", "±consonantal"],
+                    place: ["±front"],
+                    matrix: {
+                        "ɯ": {front: "±", oral: "±", consonantal: "-"},
+                        "n": {front: "±", oral: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", consonantal: "±"},
+                        "w": {front: "±", oral: "±", consonantal: "±"},
+                        "l": {front: "+", oral: "±", consonantal: "+"},
+                        "k": {front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wn",
+                    "n": "ln",
+                    "ɲ": "jn",
+                    "b": "nw",
+                    "d": "nl",
+                    "dʒ": "nj",
+                    "k": "nk",
+                    "p": "kw",
+                    "t": "kl",
+                    "tʃ": "kj",
+                    "h": "kk",
+                    "l": "l",
+                    "i": "ɯj",
+                    "ɯ": "ɯ",
+                    "u": "ɯw",
+                    "a": "ɯɯ"
+                }
             },
             {
                 name: "Minica",

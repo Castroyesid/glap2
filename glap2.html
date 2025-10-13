@@ -1655,21 +1655,49 @@
                 name: "Jamamadí",
                 lat: -7.31,
                 lng: -67.12,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Arawan",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Dixon, R. M. W. (2004). <em>The Jarawara language of Southern Amazonia</em>. Oxford: Oxford University Press. ISBN 0-19-927067-8.<br><br>Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Jamamadi.html",
+                sourceInventory: {
+                    vowels: ["i", "e", "o", "a"],
+                    consonants: ["m", "n", "b", "d", "ɟ", "t", "k", "ɸ", "s", "h", "w", "ɾ"],
+                    marginalConsonants: [],
+                    marginalVowels: [],
+                    suprasegmentals: ["length"]
+                },
+                elementaryInventory: ["a", "n", "j", "w", "k", "h"],
+                features: {
+                    list: ["±front", "±oral", "±consonantal"],
+                    manner: ["±oral", "±consonantal"],
+                    place: ["±front"],
+                    matrix: {
+                        "a": {front: "±", oral: "±", consonantal: "-"},
+                        "n": {front: "±", oral: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", consonantal: "±"},
+                        "w": {front: "±", oral: "±", consonantal: "±"},
+                        "k": {front: "+", oral: "±", consonantal: "+"},
+                        "h": {front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wn",
+                    "n": "jn",
+                    "b": "nw",
+                    "d": "nk",
+                    "ɟ": "nj",
+                    "t": "jk",
+                    "k": "kk",
+                    "ɸ": "wh",
+                    "s": "jh",
+                    "h": "h",
+                    "w": "w",
+                    "ɾ": "j",
+                    "i": "aj",
+                    "e": "a",
+                    "o": "aw",
+                    "a": "aa"
+                }
             },
             {
                 name: "Paumarí",

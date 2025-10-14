@@ -7890,21 +7890,51 @@
                 name: "Taíno",
                 lat: 18.25472679128183,
                 lng: -66.4224142362834,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Arawakan",
                 region: "North America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Granberry, Julian; Vescelius, Gary (2004). <em>Languages of the Pre-Columbian Antilles</em>. The University of Alabama Press.",
+                sourceInventory: {
+                    vowels: ["i", "e", "o", "ɛ", "a"],
+                    consonants: ["m", "n", "b", "d", "p", "t", "k", "w", "l", "j", "s", "h"],
+                    marginalConsonants: [],
+                    marginalVowels: [],
+                    suprasegmentals: []
+                },
+                elementaryInventory: ["a", "ɨ", "n", "j", "w", "l", "k"],
+                features: {
+                    list: ["±high", "±front", "±oral", "±consonantal"],
+                    manner: ["±high", "±oral", "±consonantal"],
+                    place: ["±front"],
+                    matrix: {
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ɨ": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "l": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "k": {high: "±", front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "wn",
+                    "n": "ln",
+                    "b": "nw",
+                    "d": "nl",
+                    "p": "wk",
+                    "t": "lk",
+                    "k": "jk",
+                    "w": "w",
+                    "l": "l",
+                    "j": "j",
+                    "s": "kl",
+                    "h": "kk",
+                    "i": "ɨj",
+                    "e": "ɨ",
+                    "o": "aw",
+                    "ɛ": "aj",
+                    "a": "a"
+                }
             },
             {
                 name: "Nawat",

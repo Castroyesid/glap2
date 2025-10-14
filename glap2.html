@@ -5391,24 +5391,57 @@
                 }
             },
             {
-                name: "Yukpa",
+                name: "Japreria",
                 lat: 10.31,
                 lng: -72.71,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Cariban",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Japreria.html",
+                sourceInventory: {
+                    vowels: ["i", "ɨ", "u", "e", "o", "a"],
+                    consonants: ["m", "n", "p", "t", "tʃ", "k", "ʔ", "s", "ʃ", "h", "ʋ", "ɾ", "j", "ʀ"],
+                    marginalConsonants: [],
+                    marginalVowels: [],
+                    suprasegmentals: []
+                },
+                elementaryInventory: ["a", "ɨ", "n", "j", "w", "r", "ʔ"],
+                features: {
+                    list: ["±high", "±front", "±oral", "±consonantal"],
+                    manner: ["±high", "±oral", "±consonantal"],
+                    place: ["±front"],
+                    matrix: {
+                        "a": {high: "-", front: "±", oral: "±", consonantal: "-"},
+                        "ɨ": {high: "±", front: "±", oral: "±", consonantal: "-"},
+                        "n": {high: "±", front: "±", oral: "-", consonantal: "±"},
+                        "j": {high: "±", front: "+", oral: "±", consonantal: "±"},
+                        "w": {high: "±", front: "±", oral: "±", consonantal: "±"},
+                        "r": {high: "±", front: "+", oral: "±", consonantal: "+"},
+                        "ʔ": {high: "±", front: "±", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "w",
+                    "n": "n",
+                    "p": "wʔ",
+                    "t": "rʔ",
+                    "tʃ": "ʔj",
+                    "k": "jʔ",
+                    "ʔ": "ʔʔ",
+                    "s": "r",
+                    "ʃ": "j",
+                    "h": "ʔ",
+                    "ʋ": "ww",
+                    "ɾ": "rr",
+                    "j": "jj",
+                    "ʀ": "ʔr",
+                    "i": "ɨj",
+                    "ɨ": "ɨ",
+                    "u": "ɨw",
+                    "e": "aj",
+                    "o": "aw",
+                    "a": "a"
+                }
             },
             {
                 name: "Pemon",

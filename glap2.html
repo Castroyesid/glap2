@@ -2320,21 +2320,50 @@
                 name: "Yameo",
                 lat: -3.66,
                 lng: -73.28,
-                elementarySegments: 0,
-                vowels: 0,
-                consonants: 0,
-                surfacePhonemes: 0,
                 family: "Peba-Yaguan",
                 region: "South America",
                 notes: "",
-                source: "TBD",
-                sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
-                features: { list: [], manner: [], place: [], matrix: {} },
-                totalFeatures: 0,
-                mannerFeatures: 0,
-                placeFeatures: 0,
-                mappings: {}
+                source: "Michael, Lev, Tammy Stark, and Will Chang. (2012). South American Phonological Inventory Database. University of California. Online: https://linguistics.berkeley.edu/saphon/en/inv/Yameo.html",
+                sourceInventory: {
+                    vowels: ["i", "ĩ", "e", "ẽ", "o", "õ", "a", "ã"],
+                    consonants: ["m", "n", "p", "t", "k", "s", "ʃ", "w", "l", "j"],
+                    marginalConsonants: [],
+                    marginalVowels: [],
+                    suprasegmentals: []
+                },
+                elementaryInventory: ["a", "n", "j", "w", "l"],
+                features: {
+                    list: ["±front", "±oral", "±consonantal"],
+                    manner: ["±oral", "±consonantal"],
+                    place: ["±front"],
+                    matrix: {
+                        "a": {front: "±", oral: "±", consonantal: "-"},
+                        "n": {front: "±", oral: "-", consonantal: "±"},
+                        "j": {front: "+", oral: "±", consonantal: "±"},
+                        "w": {front: "±", oral: "±", consonantal: "±"},
+                        "l": {front: "+", oral: "±", consonantal: "+"}
+                    }
+                },
+                mappings: {
+                    "m": "w",
+                    "n": "n",
+                    "p": "nw",
+                    "t": "nl",
+                    "k": "nj",
+                    "s": "l",
+                    "ʃ": "j",
+                    "w": "ww",
+                    "l": "ll",
+                    "j": "jj",
+                    "i": "aj",
+                    "ĩ": "ajn",
+                    "e": "a",
+                    "ẽ": "an",
+                    "o": "aw",
+                    "õ": "awn",
+                    "a": "aa",
+                    "ã": "aan"
+                }
             },
             {
                 name: "Máíhɨki",

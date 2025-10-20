@@ -222,9 +222,174 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
+        /* Filter Button */
+        .filter-toggle {
+            position: fixed;
+            top: 120px;
+            left: 20px;
+            z-index: 1001;
+            background-color: #3498db; /* Change this to match your theme */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .filter-toggle:hover {
+            background-color: #2980b9; /* Darker shade for hover */
+            transform: translateY(-2px);
+        }
+
+        /* Filter Sidebar */
+        .filter-sidebar {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            z-index: 1002;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .filter-sidebar.open {
+            left: 0;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .filter-header h2 {
+            color: #3498db; /* Match your theme */
+            font-size: 1.5rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+        }
+
+        .close-btn:hover {
+            color: #3498db;
+        }
+
+        .reset-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .filter-section {
+            margin-bottom: 25px;
+        }
+
+        .filter-section h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .checkbox-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            flex: 1;
+            user-select: none;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
+        <!-- Filter Toggle Button -->
+    <button class="filter-toggle" onclick="toggleFilterSidebar()">☰ Filters</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleFilterSidebar()"></div>
+
+    <!-- Filter Sidebar -->
+    <div class="filter-sidebar" id="filterSidebar">
+        <div class="filter-header">
+            <h2>Filters</h2>
+            <button class="close-btn" onclick="toggleFilterSidebar()">×</button>
+        </div>
+        
+        <button class="reset-btn" onclick="resetFilters()">Reset All Filters</button>
+
+        <div class="filter-section">
+            <h3>Regions</h3>
+            <div class="checkbox-group" id="regionFilters"></div>
+        </div>
+
+        <div class="filter-section">
+            <h3>Language Families</h3>
+            <div class="checkbox-group" id="familyFilters"></div>
+        </div>
+    </div>
     <div class="container">
         <h1>Global Linguistic Analysis Project</h1>
         
@@ -9782,7 +9947,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ɨ", "n", "j", "w", "l", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9802,7 +9967,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9822,7 +9987,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9842,7 +10007,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ɤ", "ɯ", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9862,7 +10027,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ɨ", "n", "j", "w", "r", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9882,7 +10047,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ə", "ɨ", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9902,7 +10067,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ɨ", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -9922,7 +10087,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ə", "ɨ", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -10086,7 +10251,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "n", "j", "w", "r", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -12166,7 +12331,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ə", "n", "j", "w", "l", "h", "k", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -12186,7 +12351,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ə", "n", "j", "w", "l", "h", "k", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -12566,7 +12731,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["ɛ", "j", "w", "x", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -12826,7 +12991,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "ə", "ɨ", "j", "w", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -13226,7 +13391,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "j", "w", "l", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -13266,7 +13431,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "j", "w", "ʔ"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -13386,7 +13551,7 @@
                 notes: "",
                 source: "TBD",
                 sourceInventory: { vowels: [], consonants: [], marginalConsonants: [], marginalVowels: [], suprasegmentals: [] },
-                elementaryInventory: [],
+                elementaryInventory: ["a", "j", "w", "l", "k"],
                 features: { list: [], manner: [], place: [], matrix: {} },
                 totalFeatures: 0,
                 mannerFeatures: 0,
@@ -13745,6 +13910,10 @@
 
         let markers = [];
         let selectedLanguage = null;
+        let activeFilters = {
+            regions: new Set(),
+            families: new Set()
+        };
 
         function getSegmentColor(segments) {
             if (segments === 4) return '#000000';      
@@ -13814,14 +13983,107 @@
             selectedLanguage = language;
             updateLanguageList();
         }
+ 
+        function initializeFilters() {
+            const regions = new Set();
+            const families = new Set();
 
+            languageData.forEach(lang => {
+                if (lang.region) regions.add(lang.region);
+                if (lang.family) families.add(lang.family);
+            });
+
+            // All checked by default
+            regions.forEach(region => activeFilters.regions.add(region));
+            families.forEach(family => activeFilters.families.add(family));
+
+            // Build region checkboxes
+            const regionContainer = document.getElementById('regionFilters');
+            Array.from(regions).sort().forEach(region => {
+                const div = document.createElement('div');
+                div.className = 'checkbox-item';
+                div.innerHTML = `
+                    <input type="checkbox" id="region-${region.replace(/\s+/g, '-')}" checked onchange="toggleRegion('${region}')">
+                    <label for="region-${region.replace(/\s+/g, '-')}">${region}</label>
+                `;
+                regionContainer.appendChild(div);
+            });
+
+            // Build family checkboxes
+            const familyContainer = document.getElementById('familyFilters');
+            Array.from(families).sort().forEach(family => {
+                const div = document.createElement('div');
+                div.className = 'checkbox-item';
+                div.innerHTML = `
+                    <input type="checkbox" id="family-${family.replace(/\s+/g, '-')}" checked onchange="toggleFamily('${family}')">
+                    <label for="family-${family.replace(/\s+/g, '-')}">${family}</label>
+                `;
+                familyContainer.appendChild(div);
+            });
+        }
+
+        function toggleRegion(region) {
+            if (activeFilters.regions.has(region)) {
+                activeFilters.regions.delete(region);
+            } else {
+                activeFilters.regions.add(region);
+            }
+            updateMap();
+        }
+
+        function toggleFamily(family) {
+            if (activeFilters.families.has(family)) {
+                activeFilters.families.delete(family);
+            } else {
+                activeFilters.families.add(family);
+            }
+            updateMap();
+        }
+
+        function resetFilters() {
+            const allRegions = new Set();
+            const allFamilies = new Set();
+            
+            languageData.forEach(lang => {
+                if (lang.region) allRegions.add(lang.region);
+                if (lang.family) allFamilies.add(lang.family);
+            });
+
+            activeFilters.regions = allRegions;
+            activeFilters.families = allFamilies;
+
+            // Check all checkboxes
+            document.querySelectorAll('#regionFilters input, #familyFilters input').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+
+            updateMap();
+        }
+
+        function toggleFilterSidebar() {
+            const sidebar = document.getElementById('filterSidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function isLanguageVisible(language) {
+            return activeFilters.regions.has(language.region) && 
+                activeFilters.families.has(language.family);
+        }
+
+        function getFilteredLanguages() {
+            return languageData.filter(lang => isLanguageVisible(lang));
+        }
+        
         function updateMap() {
             // Clear existing markers
             markers.forEach(marker => map.removeLayer(marker));
             markers = [];
 
             // Add new markers
-            languageData.forEach(language => {
+            const filteredLanguages = getFilteredLanguages();
+            filteredLanguages.forEach(language => {
                 const marker = createMarker(language);
                 marker.addTo(map);
                 markers.push(marker);
@@ -13836,11 +14098,18 @@
         }
 
         function updateStats() {
-            const total = languageData.length;
-            const completed = languageData.filter(l => l.elementarySegments > 0).length;
-            const completedSegments = languageData.filter(l => l.elementarySegments > 0).map(l => l.elementarySegments);
-            const avg = completed > 0 ? (completedSegments.reduce((a, b) => a + b, 0) / completed).toFixed(1) : 0;
+            const filteredLanguages = getFilteredLanguages();
+            const total = filteredLanguages.length;
+            const completed = filteredLanguages.filter(l => l.elementarySegments > 0).length;
+            const completedSegments = filteredLanguages.filter(l => l.elementarySegments > 0).map(l => l.elementarySegments);
+            const avg = completed > 0 ? 
+                (completedSegments.reduce((a, b) => a + b, 0) / completed).toFixed(1) : 0;
             
+            // Check if filters are active
+            const allLanguages = languageData.length;
+            const isFiltered = total < allLanguages;
+
+            // Update the stat display
             document.getElementById('totalLanguages').textContent = total;
             document.getElementById('avgSegments').textContent = avg;
             document.getElementById('completedAnalyses').textContent = completed;
@@ -13851,7 +14120,8 @@
             
             let gridHTML = '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 15px;">';
             
-            languageData.forEach((language, index) => {
+            const filteredLanguages = getFilteredLanguages();
+            filteredLanguages.forEach((language, index) => {
                 const segments = language.elementarySegments || 0;
                 const color = getSegmentColor(segments);
                 const isComplete = segments > 0;
@@ -14188,13 +14458,13 @@
             }
         });
 
-
         // Auto-calculate all counts for all languages
         languageData.forEach(lang => {
             updateAllCounts(lang);
         });
-        
+
         // Initialize
+        initializeFilters();
         updateMap();
 
     </script> 
